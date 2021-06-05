@@ -1,0 +1,32 @@
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<div id='subscribe-css'>
+    <p class='subscribe-note'><span>SUBSCRIBE</span> <span class='itatu'>TO</span> OUR NEWSLETTER</p>
+    <div class='subscribe-wrapper'>
+    <div class='subscribe-form'>
+    <form class='subscribe-form' method='post'>
+    <input name='uri' type='hidden' value='jeniusbareng'/><input name='loc' type='hidden' value='en_US'/><input autocomplete='off'
+    class='subscribe-css-email-field' name='email' placeholder='Enter your Email'/><input class='subscribe-css-email-button' title=''
+    type='submit' value='submit'/></form>
+    <h1 class="message"></h1>
+    </div>
+    </div>
+    </div>
+    <Script>
+$(function(){   
+        $("input[type=submit]").on("click", function(e) {
+                e.preventDefault();
+                $.ajax({
+                        url: "/email",
+                        type: "POST",
+                        data: {email: $("input[name=email]").val() },
+                        success: function(data){
+                                $(".message").append(data.message)
+                        },
+                        error: function(err) {
+                                console.log(err)
+                        }
+                })
+        })
+})
+    </Script>
