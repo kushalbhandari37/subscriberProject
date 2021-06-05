@@ -1,7 +1,7 @@
 
 
 let homeController = {
-    index: (res)=>{
+    index: (req,res)=>{
         res.render('home')
     }
 

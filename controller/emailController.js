@@ -32,7 +32,7 @@ let emailController = {
               console.log('Email sent: ' + info.response);
             }
           });
-        return res.status(200).json({status: "success", "message": "We have sent an email. Plaese Check"})
+        return res.status(200).json({status: "success", "message": "We have sent an email. Please Check"})
     },
 
     //Adds User After Email Confirmation
